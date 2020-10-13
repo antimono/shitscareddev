@@ -29,7 +29,7 @@ const Story = () => {
         title={data.stories_by_pk.title}
         description={data.stories_by_pk.text}
         openGraph={{
-          url: "https://www.url.ie/a",
+          url: `https://shitscared.dev/stories/${data.stories_by_pk.id}/${data.stories_by_pk.slug}`,
           title: ` ${data.stories_by_pk.title}`,
           description: `${data.stories_by_pk.text}`
         }}

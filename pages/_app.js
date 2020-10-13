@@ -96,15 +96,16 @@ function MyApp({ Component, pageProps }) {
           <DefaultSeo
             title="Shit Scared Developers"
             description="Hello app developers. Post anonymously about your experiences with the App Store and Google Play."
+            noindex={(process.env.ENV != "production" && false) || true}
             canonical="https://shitscared.dev"
             openGraph={{
               type: "website",
               locale: "en_IE",
-              url: "https://shitscared.dev/",
+              url: "https://shitscared.dev",
               site_name: "Shit Scared Developers",
               images: [
                 {
-                  url: "/ogimage.png",
+                  url: "https://shitscared.dev/ogimage.png",
                   width: 1200,
                   height: 630,
                   alt: "Shit Scared Developers from Apple and Google"

@@ -76,10 +76,10 @@ const IndexPage = () => {
             us.
           </p>
           <p>
-            Reading about Proton mail, Epic games, Basecamp we see we are not
-            alone. The giants send shivers down millions of people's backs. They
-            take from small businesses' revenue, claiming they use it to operate
-            the stores. This might be true, but they must do better.
+            Reading about Proton Mail, Epic games, Basecamp's Hey we see we are
+            not alone. The giants send shivers down millions of people's backs.
+            They take from small businesses' revenue, claiming they use it to
+            operate the stores. This might be true, but they must do better.
           </p>
           <p sx={{ mb: 4 }}>
             We call on you, developers, business owners, dreamers — share your

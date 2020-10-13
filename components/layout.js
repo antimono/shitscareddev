@@ -2,7 +2,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { jsx, Box, Grid } from "theme-ui"
+import { jsx, Box, Grid, Link } from "theme-ui"
 import Header from "./header"
 
 const Layout = ({ children }) => {
@@ -21,8 +21,23 @@ const Layout = ({ children }) => {
           sx={{ mb: 4, color: "secondaryText" }}
           columns={[["1fr"], ["1fr 1fr"], null]}
         >
-          © {new Date().getFullYear()}, Shit Scared Devlopers from Apple and
-          Google
+          <Box>
+            <p sx={{ m: 0 }}>
+              © {new Date().getFullYear()}, Shit Scared Devlopers from Apple and
+              Google
+            </p>
+            <p sx={{ m: 0 }}>
+              Ideas and fixes are welcome. Contribute on{" "}
+              <Link
+                variant="default"
+                sx={{ pt: 0 }}
+                href="https://github.com/antimono/shitscareddev"
+                target="blank"
+              >
+                Github
+              </Link>
+            </p>
+          </Box>
         </Grid>
       </Box>
     </Box>

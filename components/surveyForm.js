@@ -59,15 +59,19 @@ const SurveyForm = () => {
     <>
       {showModal && (
         <Flex
-          css={{ backdropFilter: "blur(20px)", justifyContent: "center" }}
+          css={{
+            backdropFilter: "blur(20px)",
+            justifyContent: "center"
+          }}
           sx={{
             width: "100%",
             position: "fixed",
             left: 0,
             top: 0,
             overflowY: "scroll",
-            maxHeight: "100vh",
-            zIndex: 100
+            height: "100vh",
+            zIndex: 100,
+            bg: "rgba(255, 255, 255, 0.7)"
           }}
         >
           <Box

@@ -22,6 +22,12 @@ function MyApp({ Component, pageProps }) {
               type="image/png"
               href="https://shitscared.dev/apple-touch-icon-152x152.png"
             />
+            <script
+              async
+              defer
+              data-domain="shitscared.dev"
+              src="https://plausible.io/js/plausible.js"
+            ></script>
           </Head>
           <DefaultSeo
             title="Shit Scared Developers"

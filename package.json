@@ -1,0 +1,24 @@
+{
+  "name": "shitscareddev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.2.2",
+    "feather-icons-react": "^0.4.1",
+    "graphql": "^15.3.0",
+    "moment": "^2.29.1",
+    "next": "9.5.5",
+    "next-seo": "^4.11.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-lines-ellipsis": "^0.14.1",
+    "react-moment": "^1.0.0",
+    "recoil": "^0.0.13",
+    "theme-ui": "^0.3.1"
+  }
+}

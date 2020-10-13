@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         <main sx={{ mb: 6 }}>{children}</main>
         <Grid
           as="footer"
-          sx={{ mb: 4, color: "secondaryText" }}
+          sx={{ mb: 5, color: "secondaryText" }}
           columns={[["1fr"], ["1fr 1fr"], null]}
         >
           <Box>

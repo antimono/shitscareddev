@@ -27,7 +27,8 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <DefaultSeo
               title="Shit Scared Developers"
-              description="Hello app developers. Post anonymously about your experiences with the App Store and Google Play."
+              description="  Hello app developers. Post anonymously about your experiences with the
+                App Store and Google Play. Share advice on how to overcome rejections."
               noindex={(process.env.ENV != "production" && false) || true}
               canonical="https://shitscared.dev"
               openGraph={{

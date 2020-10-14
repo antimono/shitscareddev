@@ -30,6 +30,7 @@ const SurveyForm = () => {
   const [createStory, { loading }] = useMutation(CREATE_STORY)
   const [title, setTitle] = useState("")
   const [text, setText] = useState("")
+  const [resolution, setResolution] = useState("")
   const [category, setCategory] = useState("")
   const [downloads, setDownloads] = useState("")
   const [mentalHealthIssues, setMentalHealthIssues] = useState(false)
@@ -46,6 +47,7 @@ const SurveyForm = () => {
         title: title,
         slug: slugify(title),
         text: text,
+        resolution: resolution,
         category: category,
         platform: platform,
         downloads: downloads,
@@ -120,6 +122,16 @@ const SurveyForm = () => {
                 mb={3}
                 onChange={e => setText(e.target.value)}
                 required
+              />
+              <Label htmlFor="resolution" sx={{ pb: 2 }}>
+                Resolution?
+              </Label>
+              <Textarea
+                name="resolution"
+                id="resolution"
+                rows="10"
+                mb={3}
+                onChange={e => setResolution(e.target.value)}
               />
               <Grid gap={2} columns={[["1fr"], ["1fr 1fr"], null]}>
                 <Box>

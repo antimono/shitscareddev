@@ -12,6 +12,7 @@ export const GET_ALL_STORIES = gql`
       platform
       created_at
       slug
+      resolution
     }
   }
 `
@@ -26,6 +27,7 @@ export const CREATE_STORY = gql`
     $downloads: String
     $company_size: String
     $mental_health_issues: Boolean
+    $resolution: String
   ) {
     insert_stories_one(
       object: {
@@ -36,6 +38,7 @@ export const CREATE_STORY = gql`
         platform: $platform
         downloads: $downloads
         company_size: $company_size
+        resolution: $resolution
         mental_health_issues: $mental_health_issues
       }
     ) {
@@ -48,6 +51,7 @@ export const CREATE_STORY = gql`
       company_size
       text
       title
+      resolution
     }
   }
 `
@@ -65,6 +69,7 @@ export const GET_STORY = gql`
       downloads
       company_size
       platform
+      resolution
     }
   }
 `

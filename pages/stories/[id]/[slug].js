@@ -45,7 +45,15 @@ const Story = () => {
             ${data.stories_by_pk.category}`}
             </p>
           </Box>
-          <p sx={{ mb: 6, mt: 0 }}>{data.stories_by_pk.text}</p>
+          <Box sx={{ mb: 6 }}>
+            <p sx={{ mt: 0 }}>{data.stories_by_pk.text}</p>
+            {data.stories_by_pk.resolution && (
+              <>
+                <h2>Resolution</h2>
+                <p>{data.stories_by_pk.resolution}</p>
+              </>
+            )}
+          </Box>
         </Grid>
         <Grid gap={2} columns={[" 1fr 1fr"]}>
           {data.stories_by_pk.downloads && (

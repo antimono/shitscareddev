@@ -22,7 +22,7 @@ const IndexPage = () => {
         <h1 sx={{ m: 0, p: 0 }}> Shit Scared Developers</h1>
         <h1 sx={{ m: 0, mt: 1, mb: 4, color: "secondaryText" }}>
           Hello app developers. Post anonymously about your experiences with the
-          App Store and Google Play.
+          App Store and Google Play. Share advice on how to overcome rejections.
         </h1>
       </Box>
       <Grid

@@ -3,11 +3,27 @@ import { SitemapStream, streamToPromise } from "sitemap"
 // A custom function I use to fetch data from a backend. I will keep the import to make it more clear why "graphlqlFetch" is used in the code
 import { useQuery } from "@apollo/client"
 import { GET_ALL_STORIES } from "../../utils/gql"
+import { graphlqlFetch } from "../../utils/apolloClient"
 
 export default async (req, res) => {
   // Fetch data from a source which will be used to render the sitemap.
-  const { loading, error, data } = useQuery(GET_ALL_STORIES)
-
+  const { stories } = await graphlqlFetch(`
+    query getSitemapData {
+      stories {
+        id
+        title
+        text
+        downloads
+        company_size
+        mental_health_issues
+        platform
+        created_at
+        slug
+        resolution
+      }
+    }
+  `)
+  console.log("Data in sitemap", stories)
   // Create the a stream to write to with a hostname which will be used for all links
   // Your are able to add more settings to the stream. I recommend to look a the npm package for more information.
   const smStream = new SitemapStream({
@@ -18,7 +34,7 @@ export default async (req, res) => {
     url: "/"
   })
   // add all dynamic url to the sitemap which is fetched from a source.
-  data.stories.forEach(element => {
+  stories.forEach(element => {
     smStream.write({
       url: `/stories/${element.id}/${element.slug}`,
       lastmod: element.created_at

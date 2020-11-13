@@ -10,6 +10,7 @@ import Loader from "../components/loader"
 import TriggerModalButton from "../components/triggerModalButton"
 import { GET_ALL_STORIES } from "../utils/gql"
 import Moment from "react-moment"
+import { initializeApollo } from "../utils/apolloClient"
 
 const IndexPage = () => {
   const { loading, error, data } = useQuery(GET_ALL_STORIES)
@@ -92,6 +93,21 @@ const IndexPage = () => {
       </Grid>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo()
+
+  await apolloClient.query({
+    query: GET_ALL_STORIES
+  })
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  }
 }
 
 export default IndexPage

@@ -2,19 +2,17 @@ import { ThemeProvider } from "theme-ui"
 import { ApolloProvider } from "@apollo/client"
 import theme from "../utils/theme"
 import "../public/fonts/inter.css"
-import { useApollo } from "../utils/apolloClient"
 import { DefaultSeo } from "next-seo"
 import { RecoilRoot } from "recoil"
 import SurveyForm from "../components/surveyForm"
 import { modalState } from "../utils/atoms"
 import Head from "next/head"
 import PlausibleProvider from "next-plausible"
+import withApollo from "../utils/apolloClient"
 
 function MyApp({ Component, pageProps }) {
-  const apolloClient = useApollo(pageProps.initialApolloState)
-
   return (
-    <ApolloProvider client={apolloClient}>
+    <>
       <DefaultSeo
         title="Shit Scared Developers"
         description="Hello app developers. Post anonymously about your experiences with the
@@ -56,8 +54,8 @@ function MyApp({ Component, pageProps }) {
           </ThemeProvider>
         </RecoilRoot>
       </PlausibleProvider>
-    </ApolloProvider>
+    </>
   )
 }
 
-export default MyApp
+export default withApollo({ ssr: true })(MyApp)

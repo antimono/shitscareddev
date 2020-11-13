@@ -12,7 +12,7 @@ import React from "react"
 import Moment from "react-moment"
 import { GET_STORY, GET_ALL_STORIES } from "../../../utils/gql"
 import { NextSeo } from "next-seo"
-import { initializeApollo } from "../../../utils/apolloClient"
+import withApollo from "../../../utils/apolloClient"
 
 const Story = () => {
   const router = useRouter()
@@ -91,33 +91,4 @@ const Story = () => {
   )
 }
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo()
-
-  await apolloClient.query({
-    query: GET_ALL_STORIES
-  })
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract()
-    },
-    revalidate: 1
-  }
-}
-
-export async function getStaticPaths() {
-  const apolloClient = initializeApollo()
-
-  const stories = await apolloClient.query({
-    query: GET_ALL_STORIES
-  })
-
-  const paths = stories.data.stories.map(story => ({
-    params: { id: story.id, slug: story.slug }
-  }))
-
-  return { paths, fallback: false }
-}
-
-export default Story
+export default withApollo({ ssr: true })(Story)

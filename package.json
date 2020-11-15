@@ -21,6 +21,7 @@
     "react-dom": "16.13.1",
     "react-lines-ellipsis": "^0.14.1",
     "react-moment": "^1.0.0",
+    "react-share": "^4.3.1",
     "recoil": "^0.0.13",
     "sitemap": "^6.3.2",
     "theme-ui": "^0.3.1"

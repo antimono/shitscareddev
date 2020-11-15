@@ -32,7 +32,7 @@ const Card = ({ title, text, href, date, as }) => (
           basedOn="letters"
         ></LinesEllipsis>
       </p>
-      <p sx={{ mb: 0, color: "secondaryText" }}>
+      <p sx={{ mb: 0, pb: 0, color: "secondaryText" }}>
         <Moment fromNow>{date}</Moment>
       </p>
     </Box>

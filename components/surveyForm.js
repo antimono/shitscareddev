@@ -55,7 +55,7 @@ const SurveyForm = () => {
         mental_health_issues: mentalHealthIssues
       }
     })
-    console.log(createStory)
+    router.push("/")
   }
   return (
     <>
